@@ -692,8 +692,8 @@ public class MergeHelper {
   }
 
   private static boolean isHasNextCall(Exprent exp) {
-    return isInvoke(exp, "java/util/Iterator",     "hasNext", "()Z") ||
-           isInvoke(exp, "java/util/ListIterator", "hasNext", "()Z");
+    return exp != null && (isInvoke(exp, "java/util/Iterator",     "hasNext", "()Z") ||
+           isInvoke(exp, "java/util/ListIterator", "hasNext", "()Z"));
   }
 
   private static boolean isNextCall(Exprent exp) {
